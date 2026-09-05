@@ -3,44 +3,51 @@
     {
       "logo": "/images/uploads/nebha.png",
       "name": "Nebha Traders",
-      "description": "Ongoing SEO blog content for a digital marketing agency's client accounts.",
-      "url": "https://nebhatraders.com/",
-      "contentType": "SEO Blogs"
+      "description": "SEO content covering hardware, home improvement, kitchen, and building products.",
+      "url": "https://nebhatraders.com/blogs/",
+      "contentType": "SEO Optimized Blogs and Service Pages"
     },
     {
       "logo": "https://picsum.photos/seed/logo2/120/120",
-      "name": "WellPath Clinics",
-      "description": "Local SEO articles and service pages for independent healthcare clinics.",
-      "url": "https://nebhatraders.com/",
-      "contentType": "Service Pages"
+      "name": "Chitlang Organic Village Resort",
+      "description": "Hospitality and travel content focused on stays, experiences, and Chitlang tourism.",
+      "url": "https://www.chitlang.com",
+      "contentType": "SEO Optimized Blogs"
     },
     {
-      "logo": "https://picsum.photos/seed/logo3/120/120",
-      "name": "Trailhead Travel Co.",
-      "description": "Destination guides and trip-planning content for a travel booking platform.",
-      "url": "https://example.com",
-      "contentType": "Blog Articles"
+      "logo": "/images/uploads/nv.jpg",
+      "name": "Natasha Vehicles",
+      "description": "Automotive content covering vehicles, features, specifications, and buyer-focused topics.",
+      "url": "https://natashavehicles.com/?srsltid=AfmBOoodX4XXwLyhV6E-Gz_93hBaQMaMQ3YuDY3aBaxI58665KdGVIzM",
+      "contentType": "SEO Optimized Blogs and Service Pages"
     },
     {
-      "logo": "https://picsum.photos/seed/logo4/120/120",
-      "name": "TaskFlow HQ",
-      "description": "Landing page and product copy for a project management SaaS tool.",
-      "url": "https://example.com",
-      "contentType": "Landing Pages"
+      "logo": "/images/uploads/mattress-ezgif.com-webp-to-png-converter.png",
+      "name": "Mattress Shop Nepal",
+      "description": "SEO content covering mattresses, sleep products, and buying guides.",
+      "url": "https://mattressshopnepal.com/",
+      "contentType": "SEO Optimized Blogs"
     },
     {
-      "logo": "https://picsum.photos/seed/logo5/120/120",
-      "name": "Ledger & Co.",
-      "description": "Finance explainers written for a small-business lending platform.",
-      "url": "https://example.com",
-      "contentType": "Informational Articles"
+      "logo": "/images/uploads/images.png",
+      "name": "Design Square",
+      "description": "Architecture, interior design, construction, and building-related content.",
+      "url": "https://designsquare.com.np/",
+      "contentType": "SEO Optimized Blogs and Service Pages"
     },
     {
-      "logo": "https://picsum.photos/seed/logo6/120/120",
-      "name": "BuildStack Reviews",
-      "description": "Technology comparison and review content for a software review site.",
-      "url": "https://example.com",
-      "contentType": "Product Content"
+      "logo": "/images/uploads/images.jpg",
+      "name": "Prasana International Education",
+      "description": "Study-abroad content covering destinations, universities, visas, and student guidance.",
+      "url": "https://www.prasanaintledu.com/",
+      "contentType": "SEO Optimized Blogs"
+    },
+    {
+      "name": "Attractive Travel and Tours",
+      "description": "Travel content covering Nepal destinations, tours, trekking, and trip planning.",
+      "url": "https://www.attractivetravelnepal.com/",
+      "contentType": "SEO Optimized Blogs",
+      "logo": "/images/uploads/attractive.jpg"
     }
   ]
 }
