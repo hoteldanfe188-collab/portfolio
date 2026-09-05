@@ -1,10 +1,10 @@
 {
   "items": [
     {
-      "company": "MarketReach Digital",
-      "role": "SEO Content Writer (Freelance)",
-      "start": "2024",
-      "end": "Present",
+      "company": "ContenIoLab",
+      "role": "SEO Content Writer",
+      "start": "2022",
+      "end": "2023",
       "description": "Write SEO-optimized blog content and landing pages for the agency's client accounts across health, finance, and SaaS niches.",
       "responsibilities": [
         "Conduct keyword research and search intent analysis for each brief",
@@ -18,33 +18,22 @@
       ]
     },
     {
-      "company": "Trailhead Travel Co.",
-      "role": "Content Writer",
-      "start": "2023",
-      "end": "2024",
-      "description": "Produced destination guides and trip-planning articles for a travel booking platform's content hub.",
+      "company": "Ultrabyte Internation Pvt.Ltd",
+      "role": "SEO Content Writer",
+      "start": "2025",
+      "end": "Present",
+      "description": "Create SEO-driven destination guides and trip-planning content for a travel platform, combining search intent, thorough research, and engaging storytelling to help travelers make informed decisions.",
       "responsibilities": [
-        "Researched and wrote destination guides targeting long-tail keywords",
-        "Collaborated with the SEO team on content briefs and topic clusters",
-        "Updated older articles to improve rankings and freshness"
+        "Research and write destination guides targeting relevant long-tail keywords and search intent.",
+        "Develop content around topic clusters and SEO briefs in collaboration with the SEO team.",
+        "Refresh and optimize existing content to improve rankings, relevance, and organic visibility.",
+        "Conduct competitor and SERP research to identify content gaps and ranking opportunities.",
+        "Optimize content structure, headings, internal links, meta titles, and meta descriptions."
       ],
       "achievements": [
-        "Grew organic traffic to the travel guides section by 40%",
-        "Wrote the top 3 highest-traffic articles on the site"
-      ]
-    },
-    {
-      "company": "Freelance",
-      "role": "Content Writer",
-      "start": "2022",
-      "end": "2023",
-      "description": "Took on early freelance projects across blog writing, website copy, and Google Docs writing samples for small businesses.",
-      "responsibilities": [
-        "Wrote blog posts and website pages for small business clients",
-        "Learned on-page SEO fundamentals and applied them to every project"
-      ],
-      "achievements": [
-        "Built a portfolio of 30+ published articles"
+        "Contributed to a 40% increase in organic traffic to the travel guides section.",
+        "Authored 3 of the website’s highest-traffic articles.",
+        "Consistently produced research-driven content aligned with both SEO goals and reader intent."
       ]
     }
   ]
