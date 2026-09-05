@@ -1,8 +1,20 @@
 {
   "stats": [
-    { "number": "100+", "label": "Articles written" },
-    { "number": "10+", "label": "Websites worked with" },
-    { "number": "50+", "label": "Keywords ranked page 1" },
-    { "number": "4+", "label": "Years of writing experience" }
+    {
+      "number": "100+",
+      "label": "Articles written"
+    },
+    {
+      "number": "10+",
+      "label": "Websites worked with"
+    },
+    {
+      "number": "50+",
+      "label": "Keywords ranked page 1"
+    },
+    {
+      "number": "1.5+",
+      "label": "Years of writing experience"
+    }
   ]
 }
