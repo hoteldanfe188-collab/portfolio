@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "name": "Sarah Bennett",
+      "position": "Content Manager",
+      "company": "MarketReach Digital",
+      "photo": "https://picsum.photos/seed/testimonial1/100/100",
+      "text": "Reliable, well-researched, and easy to brief. The content consistently ranks and reads well, which is a rare combination."
+    },
+    {
+      "name": "David Osei",
+      "position": "Founder",
+      "company": "TaskFlow HQ",
+      "photo": "https://picsum.photos/seed/testimonial2/100/100",
+      "text": "Turned a technical product into copy our customers actually understood. Our pricing page conversion improved after the rewrite."
+    },
+    {
+      "name": "Priya Nair",
+      "position": "Editor",
+      "company": "Trailhead Travel Co.",
+      "photo": "https://picsum.photos/seed/testimonial3/100/100",
+      "text": "Meets deadlines, takes feedback well, and writes with a clear sense of who the reader is. Would work together again without hesitation."
+    }
+  ]
+}

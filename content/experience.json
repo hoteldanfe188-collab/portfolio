@@ -1,0 +1,51 @@
+{
+  "items": [
+    {
+      "company": "MarketReach Digital",
+      "role": "SEO Content Writer (Freelance)",
+      "start": "2024",
+      "end": "Present",
+      "description": "Write SEO-optimized blog content and landing pages for the agency's client accounts across health, finance, and SaaS niches.",
+      "responsibilities": [
+        "Conduct keyword research and search intent analysis for each brief",
+        "Write long-form blog posts of 1,500 to 3,000 words",
+        "Optimize existing content for target keywords using Surfer SEO",
+        "Coordinate with editors and SEO strategists on internal linking"
+      ],
+      "achievements": [
+        "Helped 6 client articles reach page 1 of Google within 90 days",
+        "Maintained a 98% on-time delivery rate across 60+ articles"
+      ]
+    },
+    {
+      "company": "Trailhead Travel Co.",
+      "role": "Content Writer",
+      "start": "2023",
+      "end": "2024",
+      "description": "Produced destination guides and trip-planning articles for a travel booking platform's content hub.",
+      "responsibilities": [
+        "Researched and wrote destination guides targeting long-tail keywords",
+        "Collaborated with the SEO team on content briefs and topic clusters",
+        "Updated older articles to improve rankings and freshness"
+      ],
+      "achievements": [
+        "Grew organic traffic to the travel guides section by 40%",
+        "Wrote the top 3 highest-traffic articles on the site"
+      ]
+    },
+    {
+      "company": "Freelance",
+      "role": "Content Writer",
+      "start": "2022",
+      "end": "2023",
+      "description": "Took on early freelance projects across blog writing, website copy, and Google Docs writing samples for small businesses.",
+      "responsibilities": [
+        "Wrote blog posts and website pages for small business clients",
+        "Learned on-page SEO fundamentals and applied them to every project"
+      ],
+      "achievements": [
+        "Built a portfolio of 30+ published articles"
+      ]
+    }
+  ]
+}

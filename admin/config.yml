@@ -1,0 +1,170 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "General Info"
+        name: "general"
+        file: "content/settings.json"
+        fields:
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "text" }
+          - { label: "Years of experience", name: "yearsExperience", widget: "number", value_type: "int" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "LinkedIn URL", name: "linkedin", widget: "string" }
+          - { label: "GitHub URL", name: "github", widget: "string", required: false }
+          - { label: "Phone (optional)", name: "phone", widget: "string", required: false }
+          - { label: "Profile photo", name: "profileImage", widget: "image" }
+          - label: "About paragraphs"
+            name: "aboutParagraphs"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - label: "Focus areas"
+            name: "aboutFocusAreas"
+            widget: "list"
+            field: { label: "Item", name: "item", widget: "string" }
+
+  - name: "stats"
+    label: "Results / Stats"
+    files:
+      - label: "Stats"
+        name: "stats"
+        file: "content/stats.json"
+        fields:
+          - label: "Stats"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Number (e.g. 100+)", name: "number", widget: "string" }
+              - { label: "Label", name: "label", widget: "string" }
+
+  - name: "skills"
+    label: "Skills"
+    files:
+      - label: "Skills"
+        name: "skills"
+        file: "content/skills.json"
+        fields:
+          - label: "Skills"
+            name: "skills"
+            widget: "list"
+            fields:
+              - { label: "Skill name", name: "name", widget: "string" }
+              - { label: "Level (1-5)", name: "level", widget: "number", value_type: "int", min: 1, max: 5 }
+
+  - name: "tools"
+    label: "Tools"
+    files:
+      - label: "Tools"
+        name: "tools"
+        file: "content/tools.json"
+        fields:
+          - label: "Tools"
+            name: "tools"
+            widget: "list"
+            field: { label: "Tool name", name: "tool", widget: "string" }
+
+  - name: "portfolio"
+    label: "Portfolio Items"
+    files:
+      - label: "Portfolio"
+        name: "portfolio"
+        file: "content/portfolio.json"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Image", name: "image", widget: "image" }
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options:
+                  - { label: "SEO Blogs", value: "seo-blogs" }
+                  - { label: "Website Content", value: "website-content" }
+                  - { label: "Travel", value: "travel" }
+                  - { label: "Education", value: "education" }
+                  - { label: "Technology", value: "technology" }
+                  - { label: "Finance", value: "finance" }
+                  - { label: "Health", value: "health" }
+                  - { label: "Other", value: "other" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Client / website name", name: "client", widget: "string" }
+              - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+              - { label: "Target keyword", name: "keyword", widget: "string" }
+              - { label: "Article type", name: "articleType", widget: "string" }
+              - { label: "Live article URL (leave blank if none)", name: "liveUrl", widget: "string", required: false }
+              - { label: "Google Doc URL (leave blank if none)", name: "docUrl", widget: "string", required: false }
+              - { label: "Show in Featured section?", name: "featured", widget: "boolean", default: false }
+
+  - name: "websites"
+    label: "Websites Worked With"
+    files:
+      - label: "Websites"
+        name: "websites"
+        file: "content/websites.json"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Logo", name: "logo", widget: "image" }
+              - { label: "Website name", name: "name", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Website URL", name: "url", widget: "string" }
+              - { label: "Content type (e.g. Blog Articles)", name: "contentType", widget: "string" }
+
+  - name: "experience"
+    label: "Experience"
+    files:
+      - label: "Experience"
+        name: "experience"
+        file: "content/experience.json"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.role}} — {{fields.company}}"
+            fields:
+              - { label: "Company", name: "company", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Start (e.g. 2024)", name: "start", widget: "string" }
+              - { label: "End (e.g. Present)", name: "end", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - label: "Responsibilities"
+                name: "responsibilities"
+                widget: "list"
+                field: { label: "Responsibility", name: "item", widget: "string" }
+              - label: "Achievements"
+                name: "achievements"
+                widget: "list"
+                field: { label: "Achievement", name: "item", widget: "string" }
+
+  - name: "testimonials"
+    label: "Testimonials"
+    files:
+      - label: "Testimonials"
+        name: "testimonials"
+        file: "content/testimonials.json"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Position", name: "position", widget: "string" }
+              - { label: "Company", name: "company", widget: "string" }
+              - { label: "Photo (optional)", name: "photo", widget: "image", required: false }
+              - { label: "Testimonial text", name: "text", widget: "text" }

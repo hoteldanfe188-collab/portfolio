@@ -1,0 +1,24 @@
+{
+  "name": "Alex Morgan",
+  "title": "SEO Content Writer",
+  "tagline": "I write research-backed content that ranks on Google and reads well to actual humans.",
+  "yearsExperience": 4,
+  "email": "hello@alexmorgan.com",
+  "linkedin": "https://linkedin.com/in/alexmorgan",
+  "github": "https://github.com/alexmorgan",
+  "phone": "",
+  "profileImage": "images/profile/profile.jpg",
+  "aboutParagraphs": [
+    "I've spent the last four years writing content that has to do two jobs at once: rank on search engines and hold a reader's attention long enough to matter. That means every piece starts with research, not typing.",
+    "I've written for SaaS companies, travel brands, education platforms, and healthcare businesses, which means I've learned to sound like an expert in a lot of rooms I don't live in full time. That's the job: understand a topic fast, verify it against real sources, and explain it plainly.",
+    "My process covers keyword research, competitor content audits, on-page structure (headings, internal linking, meta titles and descriptions), and a final optimization pass with tools like Surfer SEO before anything goes live."
+  ],
+  "aboutFocusAreas": [
+    "Keyword research & search intent mapping",
+    "On-page SEO & content structure",
+    "Blog and long-form article writing",
+    "Website and landing page copy",
+    "Content briefs & editorial calendars",
+    "Research-based, fact-checked writing"
+  ]
+}

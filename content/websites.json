@@ -1,0 +1,46 @@
+{
+  "items": [
+    {
+      "logo": "https://picsum.photos/seed/logo1/120/120",
+      "name": "MarketReach Digital",
+      "description": "Ongoing SEO blog content for a digital marketing agency's client accounts.",
+      "url": "https://example.com",
+      "contentType": "SEO Blogs"
+    },
+    {
+      "logo": "https://picsum.photos/seed/logo2/120/120",
+      "name": "WellPath Clinics",
+      "description": "Local SEO articles and service pages for independent healthcare clinics.",
+      "url": "https://example.com",
+      "contentType": "Service Pages"
+    },
+    {
+      "logo": "https://picsum.photos/seed/logo3/120/120",
+      "name": "Trailhead Travel Co.",
+      "description": "Destination guides and trip-planning content for a travel booking platform.",
+      "url": "https://example.com",
+      "contentType": "Blog Articles"
+    },
+    {
+      "logo": "https://picsum.photos/seed/logo4/120/120",
+      "name": "TaskFlow HQ",
+      "description": "Landing page and product copy for a project management SaaS tool.",
+      "url": "https://example.com",
+      "contentType": "Landing Pages"
+    },
+    {
+      "logo": "https://picsum.photos/seed/logo5/120/120",
+      "name": "Ledger & Co.",
+      "description": "Finance explainers written for a small-business lending platform.",
+      "url": "https://example.com",
+      "contentType": "Informational Articles"
+    },
+    {
+      "logo": "https://picsum.photos/seed/logo6/120/120",
+      "name": "BuildStack Reviews",
+      "description": "Technology comparison and review content for a software review site.",
+      "url": "https://example.com",
+      "contentType": "Product Content"
+    }
+  ]
+}

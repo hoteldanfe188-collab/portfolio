@@ -1,0 +1,20 @@
+{
+  "skills": [
+    { "name": "SEO Content Writing", "level": 5 },
+    { "name": "Keyword Research", "level": 5 },
+    { "name": "On-Page SEO", "level": 5 },
+    { "name": "Content Optimization", "level": 4 },
+    { "name": "SEO Blog Writing", "level": 5 },
+    { "name": "Website Content Writing", "level": 4 },
+    { "name": "Competitor Research", "level": 4 },
+    { "name": "Content Research", "level": 5 },
+    { "name": "Internal Linking Strategy", "level": 4 },
+    { "name": "Meta Titles & Descriptions", "level": 5 },
+    { "name": "WordPress", "level": 4 },
+    { "name": "Google Docs", "level": 5 },
+    { "name": "Google Search Console", "level": 4 },
+    { "name": "Google Analytics", "level": 3 },
+    { "name": "AI-Assisted Content Research", "level": 4 },
+    { "name": "Content Editing & Proofreading", "level": 5 }
+  ]
+}

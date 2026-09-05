@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ============================================================
+       BASIC SEO — EDIT THESE FOUR LINES WITH YOUR OWN INFORMATION
+  ============================================================= -->
+  <title>Alex Morgan | SEO Content Writer & Copywriter</title>
+  <meta name="description" content="Alex Morgan is an SEO Content Writer with 4+ years of experience writing blog articles, website content, and landing pages that rank on Google." />
+  <link rel="canonical" href="https://your-domain-here.netlify.app/" /> <!-- REPLACE with your live URL -->
+  <meta name="author" content="Alex Morgan" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Alex Morgan | SEO Content Writer & Copywriter" />
+  <meta property="og:description" content="SEO Content Writer specializing in blog articles, website content, and research-backed copy that ranks." />
+  <meta property="og:image" content="images/profile/profile.jpg" /> <!-- REPLACE -->
+  <meta property="og:url" content="https://your-domain-here.netlify.app/" /> <!-- REPLACE -->
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Alex Morgan | SEO Content Writer & Copywriter" />
+  <meta name="twitter:description" content="SEO Content Writer specializing in blog articles, website content, and research-backed copy that ranks." />
+  <meta name="twitter:image" content="images/profile/profile.jpg" /> <!-- REPLACE -->
+
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Google Fonts: Fraunces (display serif) + Work Sans (body sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Person schema — EDIT with your details -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Alex Morgan",
+    "jobTitle": "SEO Content Writer",
+    "url": "https://your-domain-here.netlify.app/",
+    "sameAs": [
+      "https://linkedin.com/in/alexmorgan",
+      "https://github.com/alexmorgan"
+    ],
+    "knowsAbout": ["SEO", "Content Writing", "Keyword Research", "Copywriting"]
+  }
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================== NAV ============================== -->
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a href="#home" class="nav__brand">Alex Morgan<span class="nav__brand-dot">.</span></a>
+
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#websites">Websites</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact" class="nav__cta">Contact</a></li>
+      </ul>
+
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false">
+        <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8l1.8-1.8M18 6l1.8-1.8"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================== HERO ============================== -->
+    <section id="home" class="hero">
+      <div class="hero__inner">
+        <div class="hero__text">
+          <p class="hero__eyebrow">SEO Content Writer</p>
+          <h1 class="hero__name">Hi, I'm <span id="heroName">Alex Morgan</span>.<br>I write content that Google and people both want to read.</h1>
+          <p class="hero__tagline" id="heroTagline">I write research-backed content that ranks on Google and reads well to actual humans.</p>
+          <div class="hero__actions">
+            <a href="#portfolio" class="btn btn--primary">View My Work</a>
+            <a href="#contact" class="btn btn--outline">Contact Me</a>
+            <a href="resume/resume.pdf" class="btn btn--text" download>Download Resume &darr;</a>
+          </div>
+          <div class="hero__social" id="heroSocial" aria-label="Social links">
+            <!-- filled by script.js from siteData -->
+          </div>
+        </div>
+        <div class="hero__portrait">
+          <div class="hero__portrait-frame">
+            <!-- REPLACE the src below with your own photo at images/profile/profile.jpg -->
+            <img id="heroImage" src="images/profile/profile.jpg" alt="Portrait of Alex Morgan" width="420" height="420" onerror="this.src='https://picsum.photos/seed/writer-portrait/420/420'" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== ABOUT ============================== -->
+    <section id="about" class="section about">
+      <div class="section__head">
+        <h2>About</h2>
+        <p class="section__lede">The short version: I turn research into content that ranks, and the long version is below.</p>
+      </div>
+
+      <div class="about__grid">
+        <div class="about__copy" id="aboutCopy">
+          <!-- filled by script.js from siteData.aboutParagraphs -->
+        </div>
+
+        <aside class="about__side">
+          <div class="about__years">
+            <span class="about__years-number" id="yearsNumber">4</span>
+            <span class="about__years-label">years writing SEO content</span>
+          </div>
+          <h3 class="about__focus-title">What I focus on</h3>
+          <ul class="about__focus-list" id="aboutFocusList">
+            <!-- filled by script.js -->
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============================== RESULTS ============================== -->
+    <section class="section stats" aria-label="Results">
+      <div class="stats__grid" id="statsGrid">
+        <!-- filled by script.js from statsData -->
+      </div>
+    </section>
+
+    <!-- ============================== FEATURED ============================== -->
+    <section class="section featured">
+      <div class="section__head">
+        <h2>Featured writing samples</h2>
+        <p class="section__lede">A few pieces I'm proudest of, out of the full portfolio below.</p>
+      </div>
+      <div class="featured__grid" id="featuredGrid">
+        <!-- filled by script.js from portfolioItems where featured === true -->
+      </div>
+    </section>
+
+    <!-- ============================== PORTFOLIO ============================== -->
+    <section id="portfolio" class="section portfolio">
+      <div class="section__head">
+        <h2>Portfolio</h2>
+        <p class="section__lede">Published articles and Google Docs writing samples, filterable by category.</p>
+      </div>
+
+      <div class="portfolio__filters" id="portfolioFilters" role="tablist" aria-label="Filter portfolio by category">
+        <!-- filled by script.js -->
+      </div>
+
+      <div class="portfolio__grid" id="portfolioGrid">
+        <!-- filled by script.js from portfolioItems -->
+      </div>
+
+      <p class="portfolio__empty" id="portfolioEmpty" hidden>No articles in this category yet.</p>
+    </section>
+
+    <!-- ============================== WEBSITES ============================== -->
+    <section id="websites" class="section websites">
+      <div class="section__head">
+        <h2>Websites I've worked with</h2>
+        <p class="section__lede">Clients and publications I've written for.</p>
+      </div>
+      <div class="websites__grid" id="websitesGrid">
+        <!-- filled by script.js from websitesData -->
+      </div>
+    </section>
+
+    <!-- ============================== SKILLS ============================== -->
+    <section id="skills" class="section skills">
+      <div class="section__head">
+        <h2>Skills</h2>
+        <p class="section__lede">Core writing and SEO skills, sharpened over four years of client work.</p>
+      </div>
+      <div class="skills__grid" id="skillsGrid">
+        <!-- filled by script.js from skillsData -->
+      </div>
+    </section>
+
+    <!-- ============================== TOOLS ============================== -->
+    <section class="section tools">
+      <div class="section__head">
+        <h2>Tools I work with</h2>
+      </div>
+      <ul class="tools__list" id="toolsList">
+        <!-- filled by script.js from toolsData -->
+      </ul>
+    </section>
+
+    <!-- ============================== EXPERIENCE ============================== -->
+    <section id="experience" class="section experience">
+      <div class="section__head">
+        <h2>Experience</h2>
+      </div>
+      <ol class="timeline" id="timeline">
+        <!-- filled by script.js from experienceData -->
+      </ol>
+    </section>
+
+    <!-- ============================== TESTIMONIALS ============================== -->
+    <section id="testimonials" class="section testimonials">
+      <div class="section__head">
+        <h2>What people say</h2>
+      </div>
+      <div class="testimonials__grid" id="testimonialsGrid">
+        <!-- filled by script.js from testimonialsData -->
+      </div>
+    </section>
+
+    <!-- ============================== RESUME ============================== -->
+    <section class="section resume">
+      <div class="resume__card">
+        <div>
+          <h2>Want the short version?</h2>
+          <p>Download my resume for a quick overview of my experience and skills.</p>
+        </div>
+        <a href="resume/resume.pdf" class="btn btn--primary" download>Download Resume</a>
+      </div>
+    </section>
+
+    <!-- ============================== CONTACT ============================== -->
+    <section id="contact" class="section contact">
+      <div class="section__head">
+        <h2>Contact</h2>
+        <p class="section__lede">Have a project in mind? Send a message or reach out directly.</p>
+      </div>
+
+      <div class="contact__grid">
+        <!--
+          NETLIFY FORMS SETUP:
+          The form below already works on Netlify with no backend needed.
+          The hidden input and the "data-netlify" attribute are required —
+          do not remove them. After your first deploy, submissions will
+          appear in your Netlify dashboard under Forms.
+        -->
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact__form" id="contactForm">
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="visually-hidden">
+            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+          </p>
+
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required autocomplete="name" />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required autocomplete="email" />
+
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit" class="btn btn--primary">Send Message</button>
+          <p class="contact__form-note" id="formNote" role="status" hidden>Thanks — your message has been sent.</p>
+        </form>
+
+        <div class="contact__direct">
+          <h3>Direct contact</h3>
+          <ul class="contact__list" id="contactList">
+            <!-- filled by script.js -->
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> <span id="footerName">Alex Morgan</span>. Built with HTML, CSS and JavaScript.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+
+  <!-- Netlify Identity: lets invite links from the admin panel log people in
+       automatically. Safe to leave in even before Identity is set up. -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", (user) => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+</body>
+</html>
