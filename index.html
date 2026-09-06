@@ -7,21 +7,21 @@
   <!-- ============================================================
        BASIC SEO — EDIT THESE FOUR LINES WITH YOUR OWN INFORMATION
   ============================================================= -->
-  <title>Alex Morgan | SEO Content Writer & Copywriter</title>
-  <meta name="description" content="Alex Morgan is an SEO Content Writer with 4+ years of experience writing blog articles, website content, and landing pages that rank on Google." />
-  <link rel="canonical" href="https://your-domain-here.netlify.app/" /> <!-- REPLACE with your live URL -->
-  <meta name="author" content="Alex Morgan" />
+  <title>Ritish Kc | SEO Content Writer & Copywriter</title>
+  <meta name="description" content="Ritish Kc is an SEO Content Writer with 1.5+ years of experience writing blog articles, website content, and landing pages that rank on Google." />
+  <link rel="canonical" href="https://kcritish.netlify.app/" /> <!-- REPLACE with your live URL -->
+  <meta name="author" content="Ritish Kc" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Alex Morgan | SEO Content Writer & Copywriter" />
+  <meta property="og:title" content="Ritish Kc | SEO Content Writer & Copywriter" />
   <meta property="og:description" content="SEO Content Writer specializing in blog articles, website content, and research-backed copy that ranks." />
   <meta property="og:image" content="images/profile/profile.jpg" /> <!-- REPLACE -->
-  <meta property="og:url" content="https://your-domain-here.netlify.app/" /> <!-- REPLACE -->
+  <meta property="og:url" content="https://kcritish.netlify.app/" /> <!-- REPLACE -->
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Alex Morgan | SEO Content Writer & Copywriter" />
+  <meta name="twitter:title" content="Ritish Kc | SEO Content Writer & Copywriter" />
   <meta name="twitter:description" content="SEO Content Writer specializing in blog articles, website content, and research-backed copy that ranks." />
   <meta name="twitter:image" content="images/profile/profile.jpg" /> <!-- REPLACE -->
 
@@ -43,9 +43,9 @@
   {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Alex Morgan",
+    "name": "Ritish Kc",
     "jobTitle": "SEO Content Writer",
-    "url": "https://your-domain-here.netlify.app/",
+    "url": "https://kcritish.netlify.app/",
     "sameAs": [
       "https://linkedin.com/in/alexmorgan",
       "https://github.com/alexmorgan"
@@ -61,7 +61,7 @@
   <!-- ============================== NAV ============================== -->
   <header class="site-header">
     <nav class="nav" aria-label="Primary">
-      <a href="#home" class="nav__brand">Alex Morgan<span class="nav__brand-dot">.</span></a>
+      <a href="#home" class="nav__brand">Ritish Kc<span class="nav__brand-dot">.</span></a>
 
       <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">
         <span></span><span></span><span></span>
@@ -91,7 +91,7 @@
       <div class="hero__inner">
         <div class="hero__text">
           <p class="hero__eyebrow">SEO Content Writer</p>
-          <h1 class="hero__name">Hi, I'm <span id="heroName">Alex Morgan</span>.<br>I write content that Google and people both want to read.</h1>
+          <h1 class="hero__name">Hi, I'm <span id="heroName">Ritish Kc</span>.<br>I write content that Google and people both want to read.</h1>
           <p class="hero__tagline" id="heroTagline">I write research-backed content that ranks on Google and reads well to actual humans.</p>
           <div class="hero__actions">
             <a href="#portfolio" class="btn btn--primary">View My Work</a>
@@ -105,7 +105,7 @@
         <div class="hero__portrait">
           <div class="hero__portrait-frame">
             <!-- REPLACE the src below with your own photo at images/profile/profile.jpg -->
-            <img id="heroImage" src="images/profile/profile.jpg" alt="Portrait of Alex Morgan" width="420" height="420" onerror="this.src='https://picsum.photos/seed/writer-portrait/420/420'" />
+            <img id="heroImage" src="images/profile/profile.jpg" alt="Portrait of Ritish Kc" width="420" height="420" onerror="this.src='https://picsum.photos/seed/writer-portrait/420/420'" />
           </div>
         </div>
       </div>
@@ -174,6 +174,11 @@
       <div class="portfolio__more-wrap">
         <button type="button" class="btn btn--outline" id="portfolioViewMore">View More Articles</button>
       </div>
+
+      <div class="portfolio__cta" id="portfolioCta" hidden>
+        <p id="portfolioCtaText"></p>
+        <a id="portfolioCtaBtn" class="btn btn--primary" target="_blank" rel="noopener">View More on Drive</a>
+      </div>
     </section>
 
     <!-- ============================== WEBSITES ============================== -->
@@ -236,57 +241,68 @@
         <p class="section__lede">Have a project in mind? Send a message or reach out directly.</p>
       </div>
 
-      <div class="contact__card">
-        <p class="contact__card-eyebrow">&plus; Get In Touch</p>
+      <div class="contact__grid">
+        <div class="contact__glass-wrap">
+          <div class="contact__glow contact__glow--a"></div>
+          <div class="contact__glow contact__glow--b"></div>
 
-        <!--
-          NETLIFY FORMS SETUP:
-          The form below already works on Netlify with no backend needed.
-          The hidden input and the "data-netlify" attribute are required —
-          do not remove them. After your first deploy, submissions will
-          appear in your Netlify dashboard under Forms.
-        -->
-        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact__form" id="contactForm">
-          <input type="hidden" name="form-name" value="contact" />
-          <p class="visually-hidden">
-            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-          </p>
+          <div class="contact__card">
+            <p class="contact__card-eyebrow">&plus; Get In Touch</p>
 
-          <div class="contact__row">
-            <div class="contact__field">
-              <label for="firstName">First Name</label>
-              <input type="text" id="firstName" name="firstName" placeholder="Your first name" required autocomplete="given-name" />
-            </div>
-            <div class="contact__field">
-              <label for="lastName">Last Name</label>
-              <input type="text" id="lastName" name="lastName" placeholder="Your last name" required autocomplete="family-name" />
-            </div>
+            <!--
+              NETLIFY FORMS SETUP:
+              The form below already works on Netlify with no backend needed.
+              The hidden input and the "data-netlify" attribute are required —
+              do not remove them. After your first deploy, submissions will
+              appear in your Netlify dashboard under Forms.
+            -->
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact__form" id="contactForm">
+              <input type="hidden" name="form-name" value="contact" />
+              <p class="visually-hidden">
+                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+              </p>
+
+              <div class="contact__row">
+                <div class="contact__field">
+                  <label for="firstName">First Name</label>
+                  <input type="text" id="firstName" name="firstName" placeholder="Your first name" required autocomplete="given-name" />
+                </div>
+                <div class="contact__field">
+                  <label for="lastName">Last Name</label>
+                  <input type="text" id="lastName" name="lastName" placeholder="Your last name" required autocomplete="family-name" />
+                </div>
+              </div>
+
+              <div class="contact__field">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" />
+              </div>
+
+              <div class="contact__field">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="What's this about?" required />
+              </div>
+
+              <div class="contact__field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell me a bit about the project..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn--primary contact__submit">Send Message</button>
+              <p class="contact__form-note" id="formNote" role="status" hidden>Thanks — your message has been sent.</p>
+            </form>
           </div>
+        </div>
 
-          <div class="contact__field">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" />
+        <div class="contact__side">
+          <h3>Let's work together</h3>
+          <p>Whether you need a single article or an ongoing content pipeline, I'm happy to talk through scope, timelines, and rates.</p>
+          <div class="contact__direct">
+            <h4>Direct contact</h4>
+            <ul class="contact__list" id="contactList">
+              <!-- filled by script.js -->
+            </ul>
           </div>
-
-          <div class="contact__field">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" placeholder="What's this about?" required />
-          </div>
-
-          <div class="contact__field">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell me a bit about the project..." required></textarea>
-          </div>
-
-          <button type="submit" class="btn btn--primary contact__submit">Send Message</button>
-          <p class="contact__form-note" id="formNote" role="status" hidden>Thanks — your message has been sent.</p>
-        </form>
-
-        <div class="contact__direct">
-          <h3>Direct contact</h3>
-          <ul class="contact__list" id="contactList">
-            <!-- filled by script.js -->
-          </ul>
         </div>
       </div>
     </section>
@@ -294,7 +310,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>&copy; <span id="year"></span> <span id="footerName">Alex Morgan</span>. Built with HTML, CSS and JavaScript.</p>
+    <p>&copy; <span id="year"></span> <span id="footerName">Ritish Kc</span>. Built with HTML, CSS and JavaScript.</p>
   </footer>
 
   <script src="js/script.js"></script>
