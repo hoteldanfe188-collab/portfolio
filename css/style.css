@@ -591,6 +591,25 @@ p { margin: 0; }
   margin-top: 2.25rem;
 }
 
+.portfolio__cta {
+  margin-top: 2.5rem;
+  background: linear-gradient(120deg, var(--peach), var(--sky));
+  border-radius: var(--radius-m);
+  padding: 1.5rem clamp(1.25rem, 4vw, 2rem);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+.portfolio__cta p {
+  color: var(--ink);
+  font-weight: 500;
+  max-width: 46ch;
+}
+[data-theme="dark"] .portfolio__cta { background: color-mix(in srgb, var(--accent) 18%, var(--surface)); }
+[data-theme="dark"] .portfolio__cta p { color: var(--text); }
+
 .card.is-hidden { display: none; }
 
 /* =========================================================================
@@ -759,17 +778,62 @@ p { margin: 0; }
 /* =========================================================================
    CONTACT
    ========================================================================= */
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .contact__grid { grid-template-columns: 1fr; }
+}
+
+/* Wrapper holds the blurred colour glows behind the glass card */
+.contact__glass-wrap {
+  position: relative;
+  isolation: isolate;
+}
+
+.contact__glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
+  z-index: -1;
+  opacity: 0.75;
+  pointer-events: none;
+}
+.contact__glow--a {
+  width: 260px; height: 260px;
+  background: var(--coral);
+  top: -60px; left: -40px;
+}
+.contact__glow--b {
+  width: 220px; height: 220px;
+  background: var(--sky);
+  bottom: -50px; right: -30px;
+}
+[data-theme="dark"] .contact__glow--a { background: color-mix(in srgb, var(--accent) 55%, transparent); }
+[data-theme="dark"] .contact__glow--b { background: color-mix(in srgb, var(--sky) 35%, transparent); }
+
+/* --- Liquid-glass card --- */
 .contact__card {
-  max-width: 620px;
-  margin: 0 auto;
-  background: linear-gradient(165deg, var(--cream), var(--peach) 140%);
-  border: 1px solid var(--border);
+  position: relative;
+  background: color-mix(in srgb, var(--paper) 55%, transparent);
+  backdrop-filter: blur(22px) saturate(180%);
+  -webkit-backdrop-filter: blur(22px) saturate(180%);
+  border: 1px solid color-mix(in srgb, white 55%, transparent);
   border-radius: var(--radius-l);
-  padding: clamp(1.75rem, 5vw, 3rem);
-  box-shadow: var(--shadow-2);
+  padding: clamp(1.75rem, 5vw, 2.75rem);
+  box-shadow:
+    0 20px 45px -18px rgba(43, 33, 24, 0.28),
+    inset 0 1px 0 color-mix(in srgb, white 65%, transparent);
 }
 [data-theme="dark"] .contact__card {
-  background: linear-gradient(165deg, var(--surface), color-mix(in srgb, var(--accent) 10%, var(--surface)) 140%);
+  background: color-mix(in srgb, var(--surface) 45%, transparent);
+  border-color: color-mix(in srgb, white 12%, transparent);
+  box-shadow:
+    0 20px 45px -18px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 color-mix(in srgb, white 8%, transparent);
 }
 
 .contact__card-eyebrow {
@@ -812,10 +876,16 @@ p { margin: 0; }
   font-size: 0.98rem;
   padding: 0.95rem 1.15rem;
   border-radius: 999px;
-  border: 1.5px solid var(--border);
-  background: var(--surface);
+  border: 1.5px solid color-mix(in srgb, white 55%, var(--border));
+  background: color-mix(in srgb, var(--paper) 65%, transparent);
+  backdrop-filter: blur(6px);
   color: var(--text);
   resize: vertical;
+}
+[data-theme="dark"] .contact__field input,
+[data-theme="dark"] .contact__field textarea {
+  background: color-mix(in srgb, var(--surface) 60%, transparent);
+  border-color: color-mix(in srgb, white 15%, transparent);
 }
 .contact__field textarea {
   border-radius: var(--radius-m);
@@ -842,17 +912,34 @@ p { margin: 0; }
   text-align: center;
 }
 
-.contact__direct {
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border);
+/* --- Right-hand text panel --- */
+.contact__side {
+  padding-top: 0.5rem;
 }
-.contact__direct h3 { margin-bottom: 1rem; font-size: 1rem; }
-.contact__list { display: flex; flex-wrap: wrap; gap: 0.9rem 1.6rem; }
+.contact__side h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+.contact__side > p {
+  color: var(--text-soft);
+  max-width: 42ch;
+  margin-bottom: 1.75rem;
+}
+
+.contact__direct h4 {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 0.9rem;
+}
+.contact__list { display: flex; flex-direction: column; gap: 0.8rem; }
 .contact__list li a, .contact__list li span {
   text-decoration: none;
   color: var(--text-soft);
-  font-size: 0.92rem;
+  font-size: 0.95rem;
 }
 .contact__list li a:hover { color: var(--accent-ink); }
 
