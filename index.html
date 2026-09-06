@@ -7,25 +7,30 @@
   <!-- ============================================================
        BASIC SEO — EDIT THESE FOUR LINES WITH YOUR OWN INFORMATION
   ============================================================= -->
-  <title>Ritish Kc | SEO Content Writer & Copywriter</title>
-  <meta name="description" content="Ritish Kc is an SEO Content Writer with 1.5+ years of experience writing blog articles, website content, and landing pages that rank on Google." />
-  <link rel="canonical" href="https://kcritish.netlify.app/" /> <!-- REPLACE with your live URL -->
-  <meta name="author" content="Ritish Kc" />
+  <title>Alex Morgan | SEO Content Writer & Copywriter</title>
+  <meta name="description" content="Alex Morgan is an SEO Content Writer with 4+ years of experience writing blog articles, website content, and landing pages that rank on Google." />
+  <link rel="canonical" href="https://your-domain-here.netlify.app/" /> <!-- REPLACE with your live URL -->
+  <meta name="author" content="Alex Morgan" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Ritish Kc | SEO Content Writer & Copywriter" />
+  <meta property="og:title" content="Alex Morgan | SEO Content Writer & Copywriter" />
   <meta property="og:description" content="SEO Content Writer specializing in blog articles, website content, and research-backed copy that ranks." />
   <meta property="og:image" content="images/profile/profile.jpg" /> <!-- REPLACE -->
-  <meta property="og:url" content="https://kcritish.netlify.app/" /> <!-- REPLACE -->
+  <meta property="og:url" content="https://your-domain-here.netlify.app/" /> <!-- REPLACE -->
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Ritish Kc | SEO Content Writer & Copywriter" />
+  <meta name="twitter:title" content="Alex Morgan | SEO Content Writer & Copywriter" />
   <meta name="twitter:description" content="SEO Content Writer specializing in blog articles, website content, and research-backed copy that ranks." />
   <meta name="twitter:image" content="images/profile/profile.jpg" /> <!-- REPLACE -->
 
-  <link rel="icon" href="data:," />
+  <!-- FAVICON: replace images/favicon/favicon.png with your own image
+       (a square PNG, ideally 512x512) whenever you're ready — no other
+       changes needed. You can also set a favicon from Site Settings in
+       the admin panel, which overrides this default. -->
+  <link rel="icon" type="image/png" href="images/favicon/favicon.png" id="faviconLink" />
+  <link rel="apple-touch-icon" href="images/favicon/favicon.png" />
   <link rel="stylesheet" href="css/style.css" />
 
   <!-- Google Fonts: Fraunces (display serif) + Work Sans (body sans) -->
@@ -38,12 +43,12 @@
   {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Ritish Kc",
+    "name": "Alex Morgan",
     "jobTitle": "SEO Content Writer",
-    "url": "https://kcritish.netlify.app/",
+    "url": "https://your-domain-here.netlify.app/",
     "sameAs": [
-      "https://www.linkedin.com/in/ritish-kc-976175407/",
-      "https://github.com/hoteldanfe188-collab"
+      "https://linkedin.com/in/alexmorgan",
+      "https://github.com/alexmorgan"
     ],
     "knowsAbout": ["SEO", "Content Writing", "Keyword Research", "Copywriting"]
   }
@@ -56,7 +61,7 @@
   <!-- ============================== NAV ============================== -->
   <header class="site-header">
     <nav class="nav" aria-label="Primary">
-      <a href="#home" class="nav__brand">Ritish Kc<span class="nav__brand-dot">.</span></a>
+      <a href="#home" class="nav__brand">Alex Morgan<span class="nav__brand-dot">.</span></a>
 
       <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">
         <span></span><span></span><span></span>
@@ -69,7 +74,6 @@
         <li><a href="#websites">Websites</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#contact" class="nav__cta">Contact</a></li>
       </ul>
 
@@ -87,7 +91,7 @@
       <div class="hero__inner">
         <div class="hero__text">
           <p class="hero__eyebrow">SEO Content Writer</p>
-          <h1 class="hero__name">Hi, I'm <span id="heroName">Ritish Kc</span>.<br>I write content that Google and people both want to read.</h1>
+          <h1 class="hero__name">Hi, I'm <span id="heroName">Alex Morgan</span>.<br>I write content that Google and people both want to read.</h1>
           <p class="hero__tagline" id="heroTagline">I write research-backed content that ranks on Google and reads well to actual humans.</p>
           <div class="hero__actions">
             <a href="#portfolio" class="btn btn--primary">View My Work</a>
@@ -101,7 +105,7 @@
         <div class="hero__portrait">
           <div class="hero__portrait-frame">
             <!-- REPLACE the src below with your own photo at images/profile/profile.jpg -->
-            <img id="heroImage" src="images/profile/profile.jpg" alt="Portrait of Ritish Kc" width="420" height="420" onerror="this.src='https://picsum.photos/seed/writer-portrait/420/420'" />
+            <img id="heroImage" src="images/profile/profile.jpg" alt="Portrait of Alex Morgan" width="420" height="420" onerror="this.src='https://picsum.photos/seed/writer-portrait/420/420'" />
           </div>
         </div>
       </div>
@@ -166,6 +170,10 @@
       </div>
 
       <p class="portfolio__empty" id="portfolioEmpty" hidden>No articles in this category yet.</p>
+
+      <div class="portfolio__more-wrap">
+        <button type="button" class="btn btn--outline" id="portfolioViewMore">View More Articles</button>
+      </div>
     </section>
 
     <!-- ============================== WEBSITES ============================== -->
@@ -210,16 +218,6 @@
       </ol>
     </section>
 
-    <!-- ============================== TESTIMONIALS ============================== -->
-    <section id="testimonials" class="section testimonials">
-      <div class="section__head">
-        <h2>What people say</h2>
-      </div>
-      <div class="testimonials__grid" id="testimonialsGrid">
-        <!-- filled by script.js from testimonialsData -->
-      </div>
-    </section>
-
     <!-- ============================== RESUME ============================== -->
     <section class="section resume">
       <div class="resume__card">
@@ -238,7 +236,9 @@
         <p class="section__lede">Have a project in mind? Send a message or reach out directly.</p>
       </div>
 
-      <div class="contact__grid">
+      <div class="contact__card">
+        <p class="contact__card-eyebrow">&plus; Get In Touch</p>
+
         <!--
           NETLIFY FORMS SETUP:
           The form below already works on Netlify with no backend needed.
@@ -252,19 +252,33 @@
             <label>Don't fill this out if you're human: <input name="bot-field" /></label>
           </p>
 
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required autocomplete="name" />
+          <div class="contact__row">
+            <div class="contact__field">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" placeholder="Your first name" required autocomplete="given-name" />
+            </div>
+            <div class="contact__field">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Your last name" required autocomplete="family-name" />
+            </div>
+          </div>
 
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required autocomplete="email" />
+          <div class="contact__field">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" />
+          </div>
 
-          <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject" required />
+          <div class="contact__field">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="What's this about?" required />
+          </div>
 
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
+          <div class="contact__field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me a bit about the project..." required></textarea>
+          </div>
 
-          <button type="submit" class="btn btn--primary">Send Message</button>
+          <button type="submit" class="btn btn--primary contact__submit">Send Message</button>
           <p class="contact__form-note" id="formNote" role="status" hidden>Thanks — your message has been sent.</p>
         </form>
 
@@ -280,24 +294,9 @@
   </main>
 
   <footer class="site-footer">
-    <p>&copy; <span id="year"></span> <span id="footerName">Ritish Kc</span>. Built with HTML, CSS and JavaScript.</p>
+    <p>&copy; <span id="year"></span> <span id="footerName">Alex Morgan</span>. Built with HTML, CSS and JavaScript.</p>
   </footer>
 
   <script src="js/script.js"></script>
-
-  <!-- Netlify Identity: lets invite links from the admin panel log people in
-       automatically. Safe to leave in even before Identity is set up. -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", (user) => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
 </body>
 </html>
