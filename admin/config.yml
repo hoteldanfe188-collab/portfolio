@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: hoteldanfe188-collab/portfolio   # <-- REPLACE with your actual GitHub repo, e.g. alexmorgan/alexmorgan-portfolio
   branch: main
+  base_url: https://kcritish.netlify.app   # <-- REPLACE with your actual Netlify site URL
+  auth_endpoint: api/auth
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
@@ -23,6 +26,7 @@ collections:
           - { label: "GitHub URL", name: "github", widget: "string", required: false }
           - { label: "Phone (optional)", name: "phone", widget: "string", required: false }
           - { label: "Profile photo", name: "profileImage", widget: "image" }
+          - { label: "Favicon (optional, overrides the default)", name: "favicon", widget: "image", required: false }
           - label: "About paragraphs"
             name: "aboutParagraphs"
             widget: "list"
@@ -79,6 +83,8 @@ collections:
         name: "portfolio"
         file: "content/portfolio.json"
         fields:
+          - { label: "Drive CTA text", name: "driveCtaText", widget: "string", required: false, hint: "Shown next to the button below the portfolio grid. Leave both blank to hide this row entirely." }
+          - { label: "Drive CTA button URL", name: "driveCtaUrl", widget: "string", required: false, hint: "Link to your Google Drive folder (or leave blank to hide the row)." }
           - label: "Items"
             name: "items"
             widget: "list"
@@ -150,21 +156,3 @@ collections:
                 name: "achievements"
                 widget: "list"
                 field: { label: "Achievement", name: "item", widget: "string" }
-
-  - name: "testimonials"
-    label: "Testimonials"
-    files:
-      - label: "Testimonials"
-        name: "testimonials"
-        file: "content/testimonials.json"
-        fields:
-          - label: "Items"
-            name: "items"
-            widget: "list"
-            summary: "{{fields.name}}"
-            fields:
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Position", name: "position", widget: "string" }
-              - { label: "Company", name: "company", widget: "string" }
-              - { label: "Photo (optional)", name: "photo", widget: "image", required: false }
-              - { label: "Testimonial text", name: "text", widget: "text" }
