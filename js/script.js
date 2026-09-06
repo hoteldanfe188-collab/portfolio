@@ -14,7 +14,7 @@
    previewing on your own computer.
    ========================================================================= */
 
-let siteData, statsData, skillsData, toolsData, portfolioItems, websitesData, experienceData, testimonialsData;
+let siteData, statsData, skillsData, toolsData, portfolioItems, websitesData, experienceData;
 
 const CONTENT_FILES = {
   site: "content/settings.json",
@@ -23,8 +23,7 @@ const CONTENT_FILES = {
   tools: "content/tools.json",
   portfolio: "content/portfolio.json",
   websites: "content/websites.json",
-  experience: "content/experience.json",
-  testimonials: "content/testimonials.json"
+  experience: "content/experience.json"
 };
 
 async function loadContent() {
@@ -47,7 +46,6 @@ async function loadContent() {
   portfolioItems = data.portfolio.items;
   websitesData = data.websites.items;
   experienceData = data.experience.items;
-  testimonialsData = data.testimonials.items;
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -69,12 +67,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   renderPortfolio();
   renderWebsites();
   renderExperience();
-  renderTestimonials();
   renderContactInfo();
 
   setupNav();
   setupThemeToggle();
   setupContactForm();
+  setupScrollAnimations();
 
   document.getElementById("year").textContent = new Date().getFullYear();
 });
@@ -104,6 +102,10 @@ function renderSite() {
   const img = document.getElementById("heroImage");
   img.src = siteData.profileImage;
   img.alt = `Portrait of ${siteData.name}`;
+
+  if (siteData.favicon) {
+    document.getElementById("faviconLink").href = siteData.favicon;
+  }
 
   const social = document.getElementById("heroSocial");
   const links = [
@@ -256,10 +258,13 @@ const CATEGORY_LABELS = {
   "other": "Other"
 };
 
+const PORTFOLIO_PAGE_SIZE = 3;
+
 function renderPortfolio() {
   const filtersWrap = document.getElementById("portfolioFilters");
   const grid = document.getElementById("portfolioGrid");
   const emptyMsg = document.getElementById("portfolioEmpty");
+  const viewMoreBtn = document.getElementById("portfolioViewMore");
 
   // render cards once, tag with data-category
   const cardsByCategory = [];
@@ -268,6 +273,29 @@ function renderPortfolio() {
     card.dataset.category = item.category;
     grid.appendChild(card);
     cardsByCategory.push(card);
+  });
+
+  let currentFilter = "all";
+  let expanded = false;
+
+  function applyFilter() {
+    const matches = cardsByCategory.filter(
+      card => currentFilter === "all" || card.dataset.category === currentFilter
+    );
+    const limit = expanded ? matches.length : PORTFOLIO_PAGE_SIZE;
+
+    cardsByCategory.forEach(card => card.classList.add("is-hidden"));
+    matches.forEach((card, i) => {
+      card.classList.toggle("is-hidden", i >= limit);
+    });
+
+    emptyMsg.hidden = matches.length !== 0;
+    viewMoreBtn.hidden = matches.length <= PORTFOLIO_PAGE_SIZE || expanded;
+  }
+
+  viewMoreBtn.addEventListener("click", () => {
+    expanded = true;
+    applyFilter();
   });
 
   // render filter buttons
@@ -280,17 +308,14 @@ function renderPortfolio() {
     btn.addEventListener("click", () => {
       filtersWrap.querySelectorAll(".filter-btn").forEach(b => b.setAttribute("aria-selected", "false"));
       btn.setAttribute("aria-selected", "true");
-
-      let visibleCount = 0;
-      cardsByCategory.forEach(card => {
-        const match = key === "all" || card.dataset.category === key;
-        card.classList.toggle("is-hidden", !match);
-        if (match) visibleCount++;
-      });
-      emptyMsg.hidden = visibleCount !== 0;
+      currentFilter = key;
+      expanded = false;
+      applyFilter();
     });
     filtersWrap.appendChild(btn);
   });
+
+  applyFilter();
 }
 
 /* ---------- websites ---------- */
@@ -346,33 +371,6 @@ function renderExperience() {
     }
 
     timeline.appendChild(item);
-  });
-}
-
-/* ---------- testimonials ---------- */
-function renderTestimonials() {
-  const grid = document.getElementById("testimonialsGrid");
-  testimonialsData.forEach(t => {
-    const card = el("div", "testimonial");
-    card.appendChild(el("p", "testimonial__text", t.text));
-
-    const person = el("div", "testimonial__person");
-    if (t.photo) {
-      const photo = el("div", "testimonial__photo");
-      const img = el("img");
-      img.src = t.photo;
-      img.alt = t.name;
-      img.loading = "lazy";
-      photo.appendChild(img);
-      person.appendChild(photo);
-    }
-    const names = el("div");
-    names.appendChild(el("p", "testimonial__name", t.name));
-    names.appendChild(el("p", "testimonial__role", `${t.position}, ${t.company}`));
-    person.appendChild(names);
-
-    card.appendChild(person);
-    grid.appendChild(card);
   });
 }
 
@@ -450,6 +448,42 @@ function setupThemeToggle() {
 }
 
 /* ---------- contact form (Netlify AJAX submit) ---------- */
+/* ---------- scroll-reveal animations ---------- */
+function setupScrollAnimations() {
+  const selectors = [
+    ".section__head",
+    ".card",
+    ".stat",
+    ".website-card",
+    ".skill-item",
+    ".timeline__item",
+    ".resume__card",
+    ".contact__card",
+    ".about__side"
+  ];
+  const targets = document.querySelectorAll(selectors.join(","));
+  if (!("IntersectionObserver" in window) || targets.length === 0) {
+    targets.forEach(t => t.classList.add("is-visible"));
+    return;
+  }
+
+  targets.forEach(t => t.classList.add("reveal"));
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+  );
+
+  targets.forEach(t => observer.observe(t));
+}
+
 function setupContactForm() {
   const form = document.getElementById("contactForm");
   const note = document.getElementById("formNote");
