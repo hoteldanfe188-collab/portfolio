@@ -152,10 +152,49 @@ function renderStats() {
   const grid = document.getElementById("statsGrid");
   statsData.forEach(s => {
     const item = el("div", "stat");
-    item.appendChild(el("span", "stat__number", s.number));
+    const numberEl = el("span", "stat__number", "0");
+    numberEl.dataset.countTo = s.number; // e.g. "100+", "1.5+"
+    item.appendChild(numberEl);
     item.appendChild(el("span", "stat__label", s.label));
     grid.appendChild(item);
   });
+}
+
+/* Animates a stat number from 0 up to its target (e.g. "100+", "1.5+"),
+   preserving any non-numeric suffix and decimal precision. Skips straight
+   to the final value if the visitor prefers reduced motion. */
+function animateCount(numberEl) {
+  const raw = numberEl.dataset.countTo || numberEl.textContent;
+  const match = String(raw).match(/^([\d]*\.?[\d]+)(.*)$/);
+  if (!match) {
+    numberEl.textContent = raw;
+    return;
+  }
+
+  const target = parseFloat(match[1]);
+  const suffix = match[2] || "";
+  const decimals = (match[1].split(".")[1] || "").length;
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (prefersReducedMotion) {
+    numberEl.textContent = target.toFixed(decimals) + suffix;
+    return;
+  }
+
+  const duration = 1200;
+  const start = performance.now();
+
+  function tick(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+    numberEl.textContent = (target * eased).toFixed(decimals) + suffix;
+    if (progress < 1) {
+      requestAnimationFrame(tick);
+    } else {
+      numberEl.textContent = target.toFixed(decimals) + suffix;
+    }
+  }
+  requestAnimationFrame(tick);
 }
 
 /* ---------- skills ---------- */
@@ -474,7 +513,13 @@ function setupScrollAnimations() {
   ];
   const targets = document.querySelectorAll(selectors.join(","));
   if (!("IntersectionObserver" in window) || targets.length === 0) {
-    targets.forEach(t => t.classList.add("is-visible"));
+    targets.forEach(t => {
+      t.classList.add("is-visible");
+      if (t.classList.contains("stat")) {
+        const numberEl = t.querySelector(".stat__number");
+        if (numberEl) animateCount(numberEl);
+      }
+    });
     return;
   }
 
@@ -485,6 +530,10 @@ function setupScrollAnimations() {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add("is-visible");
+          if (entry.target.classList.contains("stat")) {
+            const numberEl = entry.target.querySelector(".stat__number");
+            if (numberEl) animateCount(numberEl);
+          }
           observer.unobserve(entry.target);
         }
       });
