@@ -585,6 +585,12 @@ p { margin: 0; }
   padding: 2rem 0;
 }
 
+.portfolio__more-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.25rem;
+}
+
 .card.is-hidden { display: none; }
 
 /* =========================================================================
@@ -735,44 +741,6 @@ p { margin: 0; }
 }
 
 /* =========================================================================
-   TESTIMONIALS
-   ========================================================================= */
-.testimonials__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-@media (max-width: 980px) { .testimonials__grid { grid-template-columns: 1fr; } }
-
-.testimonial {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-m);
-  padding: 1.6rem;
-}
-.testimonial__text {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  line-height: 1.5;
-  color: var(--text);
-}
-.testimonial__text::before { content: open-quote; color: var(--accent); }
-.testimonial__text::after { content: close-quote; color: var(--accent); }
-
-.testimonial__person {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin-top: 1.2rem;
-}
-.testimonial__photo {
-  width: 44px; height: 44px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
-}
-.testimonial__photo img { width: 100%; height: 100%; object-fit: cover; }
-.testimonial__name { font-weight: 600; font-size: 0.92rem; }
-.testimonial__role { font-size: 0.82rem; color: var(--text-soft); }
-
-/* =========================================================================
    RESUME BANNER
    ========================================================================= */
 .resume__card {
@@ -791,52 +759,100 @@ p { margin: 0; }
 /* =========================================================================
    CONTACT
    ========================================================================= */
-.contact__grid {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: clamp(2rem, 5vw, 4rem);
+.contact__card {
+  max-width: 620px;
+  margin: 0 auto;
+  background: linear-gradient(165deg, var(--cream), var(--peach) 140%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-l);
+  padding: clamp(1.75rem, 5vw, 3rem);
+  box-shadow: var(--shadow-2);
 }
-@media (max-width: 780px) { .contact__grid { grid-template-columns: 1fr; } }
+[data-theme="dark"] .contact__card {
+  background: linear-gradient(165deg, var(--surface), color-mix(in srgb, var(--accent) 10%, var(--surface)) 140%);
+}
+
+.contact__card-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  margin-bottom: 1.5rem;
+}
 
 .contact__form {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 1.1rem;
 }
-.contact__form label {
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-top: 0.85rem;
+
+.contact__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.1rem;
 }
-.contact__form input,
-.contact__form textarea {
+@media (max-width: 520px) { .contact__row { grid-template-columns: 1fr; } }
+
+.contact__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.contact__field label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+}
+.contact__field input,
+.contact__field textarea {
   font-family: var(--font-body);
   font-size: 0.98rem;
-  padding: 0.8rem 0.9rem;
-  border-radius: var(--radius-s);
+  padding: 0.95rem 1.15rem;
+  border-radius: 999px;
   border: 1.5px solid var(--border);
   background: var(--surface);
   color: var(--text);
   resize: vertical;
 }
-.contact__form input:focus, .contact__form textarea:focus {
-  border-color: var(--accent);
+.contact__field textarea {
+  border-radius: var(--radius-m);
+  resize: vertical;
 }
-.contact__form button { margin-top: 1.3rem; align-self: flex-start; }
+.contact__field input::placeholder,
+.contact__field textarea::placeholder { color: var(--text-soft); opacity: 0.75; }
+.contact__field input:focus,
+.contact__field textarea:focus { border-color: var(--accent); }
+
+.contact__submit {
+  margin-top: 0.4rem;
+  width: 100%;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 1rem 1.5rem;
+}
+
 .contact__form-note {
-  margin-top: 0.9rem;
+  margin-top: 0.2rem;
   color: var(--accent-ink);
   font-weight: 600;
   font-size: 0.9rem;
+  text-align: center;
 }
 
-.contact__direct { padding-top: 0.3rem; }
-.contact__direct h3 { margin-bottom: 1rem; font-size: 1.1rem; }
-.contact__list { display: flex; flex-direction: column; gap: 0.9rem; }
+.contact__direct {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.contact__direct h3 { margin-bottom: 1rem; font-size: 1rem; }
+.contact__list { display: flex; flex-wrap: wrap; gap: 0.9rem 1.6rem; }
 .contact__list li a, .contact__list li span {
   text-decoration: none;
   color: var(--text-soft);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
 }
 .contact__list li a:hover { color: var(--accent-ink); }
 
@@ -850,4 +866,79 @@ p { margin: 0; }
   font-size: 0.85rem;
   border-top: 1px solid var(--border);
   margin-top: 2rem;
+}
+
+/* =========================================================================
+   ANIMATIONS
+   These only add polish — structure and functionality are unaffected.
+   ========================================================================= */
+
+/* Scroll-reveal: script.js tags elements with .reveal, then adds
+   .is-visible once they enter the viewport. */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Small stagger so grids of cards don't all animate in perfectly synced */
+.reveal:nth-child(2n).is-visible { transition-delay: 0.06s; }
+.reveal:nth-child(3n).is-visible { transition-delay: 0.12s; }
+
+/* Hero entrance, plays once on load (not scroll-triggered) */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero__eyebrow, .hero__name, .hero__tagline, .hero__actions, .hero__social {
+  animation: heroFadeUp 0.7s ease both;
+}
+.hero__name { animation-delay: 0.05s; }
+.hero__tagline { animation-delay: 0.14s; }
+.hero__actions { animation-delay: 0.22s; }
+.hero__social { animation-delay: 0.3s; }
+.hero__portrait-frame { animation: heroFadeUp 0.8s ease 0.12s both; }
+
+/* Nav underline sweep on hover, in place of the abrupt border-color change */
+.nav__menu a {
+  position: relative;
+  border-bottom: none;
+}
+.nav__menu a::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 100%;
+  bottom: -2px;
+  height: 2px;
+  background: var(--accent);
+  transition: right 0.25s ease;
+}
+.nav__menu a:hover::after { right: 0; }
+
+/* Slightly livelier card image zoom on hover */
+.card__image img, .website-card__logo img {
+  transition: transform 0.4s ease;
+}
+.card:hover .card__image img { transform: scale(1.05); }
+
+/* Filter buttons: smoother press feedback */
+.filter-btn { transition: all 0.15s ease, transform 0.1s ease; }
+.filter-btn:active { transform: scale(0.96); }
+
+/* Theme toggle icon swap gets a gentle rotation instead of a hard cut */
+.theme-toggle svg { transition: opacity 0.2s ease, transform 0.3s ease; }
+.theme-toggle:hover { transform: rotate(12deg); }
+
+/* Stat numbers count-in feel via a soft scale-up as they reveal */
+.stat.reveal { transform: translateY(26px) scale(0.96); }
+.stat.reveal.is-visible { transform: translateY(0) scale(1); }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; }
+  .hero__eyebrow, .hero__name, .hero__tagline, .hero__actions, .hero__social, .hero__portrait-frame {
+    animation: none;
+  }
 }
