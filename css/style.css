@@ -1011,6 +1011,19 @@ p { margin: 0; }
 }
 .card:hover .card__image img { transform: scale(1.05); }
 
+/* Fix: .reveal.is-visible (added above) has the same CSS specificity as
+   .card:hover and comes later in the file, so it was silently cancelling
+   the hover lift once a card had scrolled into view. These two rules are
+   more specific, so the lift works again on top of the reveal state. */
+.card.is-visible:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-2);
+}
+.website-card.is-visible:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-2);
+}
+
 /* Filter buttons: smoother press feedback */
 .filter-btn { transition: all 0.15s ease, transform 0.1s ease; }
 .filter-btn:active { transform: scale(0.96); }
