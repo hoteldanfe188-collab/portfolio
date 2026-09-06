@@ -59,23 +59,57 @@ git push -u origin main
 
 ## 4. Turning on the admin panel (one-time setup)
 
-The admin panel needs two things enabled in Netlify: **Identity** (so you
-can log in) and **Git Gateway** (so it can save changes to GitHub).
+The admin panel logs you in with your GitHub account directly (using
+GitHub OAuth), and uses two small serverless functions already included
+in this project (`netlify/functions/auth.js` and `callback.js`) to
+handle the login handshake. This setup replaces Netlify's older
+"Identity + Git Gateway" approach, which Netlify has deprecated.
 
-1. In your Netlify site dashboard, go to **Site configuration → Identity**
-   and click **Enable Identity**.
-2. Still in Identity settings, scroll to **Registration** and set it to
-   **Invite only** (so strangers can't sign up on your site).
-3. Scroll to **Services → Git Gateway** and click **Enable Git Gateway**.
-   This lets the CMS commit content changes to your repo on your behalf.
-4. Go to the **Identity** tab (top of your site dashboard, not settings)
-   and click **Invite users**. Enter your own email address.
-5. Check your email for the invite, click it — it will open your site
-   and prompt you to set a password.
-6. Go to `https://your-site.netlify.app/admin/` and log in with that
-   email and password.
+### Step A — Create a GitHub OAuth App
 
-You only need to do this setup once. After that, editing is just:
+1. Go to **github.com → Settings → Developer settings → OAuth Apps →
+   New OAuth App** (or go directly to
+   `https://github.com/settings/applications/new`).
+2. Fill in:
+   - **Application name:** anything, e.g. "My Portfolio Admin"
+   - **Homepage URL:** your live Netlify URL, e.g.
+     `https://your-site-name.netlify.app`
+   - **Authorization callback URL:**
+     `https://your-site-name.netlify.app/api/callback`
+3. Click **Register application**.
+4. Copy the **Client ID** shown on the next page.
+5. Click **Generate a new client secret**, and copy that too (you won't
+   be able to see it again later).
+
+### Step B — Add the credentials to Netlify
+
+1. In your Netlify site dashboard, go to **Site configuration →
+   Environment variables**.
+2. Add two variables:
+   - `OAUTH_CLIENT_ID` → paste the Client ID from GitHub
+   - `OAUTH_CLIENT_SECRET` → paste the Client Secret from GitHub
+3. Trigger a redeploy (Netlify usually does this automatically, or use
+   **Deploys → Trigger deploy → Deploy site**) so the functions can read
+   the new variables.
+
+### Step C — Point the admin panel at your repo
+
+1. Open `admin/config.yml` in your project.
+2. Replace `YOUR-USERNAME/YOUR-REPO-NAME` with your actual GitHub
+   repo, e.g. `alexmorgan/alexmorgan-portfolio`.
+3. Replace `https://YOUR-SITE-NAME.netlify.app` with your actual live
+   Netlify URL.
+4. Commit and push this change to GitHub (or edit the file directly on
+   GitHub's website and commit there). Netlify redeploys automatically.
+
+### Step D — Log in
+
+1. Go to `https://your-site-name.netlify.app/admin/`.
+2. Click **Login with GitHub**, approve access when GitHub asks.
+3. You're in. Since it's your own repository, you already have the
+   permissions needed to save changes.
+
+You only need Steps A–C once. After that, editing is just:
 
 **Visit `/admin/` → log in → click a section → edit → click Publish.**
 Netlify rebuilds the site automatically within a minute or two.
@@ -84,14 +118,13 @@ Netlify rebuilds the site automatically within a minute or two.
 
 | Admin section         | What it controls |
 |------------------------|-------------------|
-| **Site Settings**      | Your name, title, tagline, email, LinkedIn, GitHub, phone, profile photo, about text, years of experience |
+| **Site Settings**      | Your name, title, tagline, email, LinkedIn, GitHub, phone, profile photo, favicon, about text, years of experience |
 | **Results / Stats**    | The stat cards (e.g. "100+ Articles Written") |
 | **Skills**             | The skills list and progress bars |
 | **Tools**              | The list of tools you use |
 | **Portfolio Items**    | Every portfolio card — title, image, category, description, client, date, keyword, links, featured flag |
 | **Websites Worked With** | The client/website logo cards |
 | **Experience**         | Your work history timeline |
-| **Testimonials**       | Client/employer quotes and photos |
 
 Each of these opens as a form. Image fields let you drag and drop a
 photo directly — it's uploaded into `images/uploads/` and linked
@@ -99,7 +132,20 @@ automatically. Lists (like portfolio items or skills) have an "Add"
 button to create new entries and a trash icon to remove them, and you
 can drag entries to reorder them.
 
-## 6. Adding a new portfolio item (example)
+## 6. Linking to your Google Drive from the portfolio section
+
+Below the portfolio grid (and the "View More Articles" button) there's an
+optional call-to-action row with a short line of text and a button. It's
+hidden by default. To turn it on:
+
+1. Go to `/admin/` → **Portfolio Items** → the "Portfolio" entry.
+2. Fill in **Drive CTA text** (e.g. "Want to see more of my writing?
+   I keep additional samples in a shared Google Drive folder.") and
+   **Drive CTA button URL** (your Drive folder's share link).
+3. Click **Publish**. The row appears automatically once both fields
+   have something in them; leave either blank to hide it again.
+
+## 7. Adding a new portfolio item (example)
 
 1. Go to `/admin/` → **Portfolio Items** → the one "Portfolio" entry.
 2. Click **Add** under Items.
@@ -112,7 +158,7 @@ can drag entries to reorder them.
 For a Google Doc sample, set its sharing to **Anyone with the link —
 Viewer** so visitors can actually open it.
 
-## 7. Replacing your profile photo and resume
+## 8. Replacing your profile photo and resume
 
 - **Profile photo:** in **Site Settings**, click the profile photo field
   and upload your own image. No code changes needed.
@@ -122,7 +168,7 @@ Viewer** so visitors can actually open it.
   that exact file name. The "Download Resume" buttons already point to
   that path.
 
-## 8. Editing content by hand (optional)
+## 9. Editing content by hand (optional)
 
 If you'd rather skip the admin panel, everything it edits lives in
 plain JSON files in `content/`:
@@ -135,21 +181,20 @@ content/tools.json          Tools list
 content/portfolio.json      Portfolio items
 content/websites.json       Websites worked with
 content/experience.json     Work experience
-content/testimonials.json   Testimonials
 ```
 
 Open any of them in a text editor, change the values (keep the quotes
 and commas intact), save, and push to GitHub. Netlify redeploys
 automatically.
 
-## 9. Contact form (Netlify Forms)
+## 10. Contact form (Netlify Forms)
 
 The contact form already has the attributes Netlify needs
 (`data-netlify="true"`), and submits via a small AJAX request so the
 page doesn't reload. Once deployed, submissions appear in your Netlify
 dashboard under **Forms** — no extra setup required.
 
-## 10. Dark mode
+## 11. Dark mode
 
 The moon/sun icon in the navigation toggles dark mode, saved in the
 visitor's browser so it's remembered on their next visit.
@@ -174,6 +219,10 @@ visitor's browser so it's remembered on their next visit.
 
 ## Notes
 
+- **Favicon:** put a square image at `images/favicon/favicon.png` whenever
+  you're ready, or upload one from **Site Settings → Favicon** in the
+  admin panel (that one takes priority if set). No code changes needed
+  either way.
 - Before you finish setup, replace the `your-domain-here.netlify.app`
   placeholders in `index.html`, `robots.txt`, and `sitemap.xml` with
   your real Netlify URL.
