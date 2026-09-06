@@ -15,6 +15,7 @@
    ========================================================================= */
 
 let siteData, statsData, skillsData, toolsData, portfolioItems, websitesData, experienceData;
+let portfolioCta = {};
 
 const CONTENT_FILES = {
   site: "content/settings.json",
@@ -44,6 +45,7 @@ async function loadContent() {
   skillsData = data.skills.skills;
   toolsData = data.tools.tools;
   portfolioItems = data.portfolio.items;
+  portfolioCta = { text: data.portfolio.driveCtaText || "", url: data.portfolio.driveCtaUrl || "" };
   websitesData = data.websites.items;
   experienceData = data.experience.items;
 }
@@ -316,6 +318,15 @@ function renderPortfolio() {
   });
 
   applyFilter();
+
+  // Drive CTA row — only show if both a message and a URL are set
+  const ctaWrap = document.getElementById("portfolioCta");
+  if (portfolioCta.text && portfolioCta.url) {
+    document.getElementById("portfolioCtaText").textContent = portfolioCta.text;
+    const ctaBtn = document.getElementById("portfolioCtaBtn");
+    ctaBtn.href = portfolioCta.url;
+    ctaWrap.hidden = false;
+  }
 }
 
 /* ---------- websites ---------- */
